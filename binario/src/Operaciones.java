@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Operaciones {
     public double binToDec(String bin){
         String []partes = bin.split("\\.");
@@ -25,8 +28,14 @@ public class Operaciones {
         return total;
     }
 
-    public double decToBin(String bin){
-
-        return 0;
+    public String decToBin(int dec){
+        StringBuilder bin=new StringBuilder();
+        while(dec!=0){
+            int residuo=dec%2;
+            bin.append(residuo);
+            dec=dec/2;
+        }
+        bin.reverse();
+        return bin.toString();
     }
 }
